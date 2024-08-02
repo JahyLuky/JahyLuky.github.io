@@ -1,0 +1,119 @@
+body {
+  font-family: 'Open Sans', serif;
+  padding-top: 56px; /* Adjust based on the navbar height */
+  color: #868e96;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Saira Extra Condensed', serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #343a40;
+}
+
+h1 {
+  font-size: 6rem;
+  line-height: 5.5rem;
+}
+
+h2 {
+  font-size: 3.5rem;
+}
+
+.subheading {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-family: 'Saira Extra Condensed', serif;
+  font-size: 1.35rem;
+}
+
+.list-social-icons a {
+  color: #495057;
+}
+
+.list-social-icons a:hover {
+  color: #800080;
+}
+
+.list-social-icons a .fa-lg {
+  font-size: 1.75rem;
+}
+
+.list-icons {
+  font-size: 3rem;
+}
+
+.list-icons .list-inline-item i:hover {
+  color: #800080;
+}
+
+section.resume-section {
+  border-bottom: 1px solid #dee2e6;
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important;
+}
+
+section.resume-section .resume-item .resume-date {
+  min-width: none;
+}
+
+@media (min-width: 768px) {
+  section.resume-section {
+    min-height: 100vh;
+  }
+
+  section.resume-section .resume-item .resume-date {
+    min-width: 18rem;
+  }
+}
+
+@media (min-width: 992px) {
+  section.resume-section {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+}
+
+.bg-primary {
+  background-color: #800080 !important;
+}
+
+/* CSS to make the profile image smaller */
+.small-profile-img {
+  max-width: 80px; /* Adjust as needed */
+  max-height: 80px; /* Adjust as needed */
+}
+
+
+.text-primary {
+  color: #800080 !important;
+}
+
+a {
+  color: #800080;
+}
+
+a:hover, a:focus, a:active {
+  color: #824027;
+}
+
+/* Custom styles for new "Projects" section */
+#projects .btn-primary {
+  background-color: #800080;
+  border-color: #800080;
+}
+
+#projects .btn-primary:hover, #projects .btn-primary:focus, #projects .btn-primary:active {
+  background-color: #824027;
+  border-color: #824027;
+}
+
+/* Custom styles for navbar toggle */
+.navbar-toggler {
+  color: #fff; /* Set text color to white */
+  font-weight: bold; /* Increase font weight for better visibility */
+}
+
+.navbar-toggler-icon {
+  color: #fff; /* Set icon color to white */
+}
