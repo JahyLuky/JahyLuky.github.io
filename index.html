@@ -15,13 +15,13 @@
         <div class="terminal" id="terminal1" style="display: block;">
             <span class="prompt">
                 <span class="terminal-text">jahelka@lukas</span><span class="colon">:</span><span
-                    class="tilda">~/src</span><span class="colon">$ </span>
+                    class="tilda">~/src/</span><span class="colon">$ </span>
             </span>
             <span class="command" data-text="whoami" style="--char-count: 6;">whoami</span>
         </div>
         <section class="output" id="output1">
-            <p>I work in telecommunications. My work is combination of network engineering, sysadmin and programing.</p>
-            <p>I manage contact centers and operation systems for our customers. My favourite part of my job is ~surprisingly~ programing. I primarily work with third-party APIs and focus on developing and updating our custom C# library for Genesys Workspace Desktop Edition.</p>
+            <p>Hi, I'm Lukas, a 23-year-old software developer based in Prague. I started my career as a network engineer in telecommunications, and now I focus on software development using .NET.</p>
+            <p>Currently, I work on updating and improving custom applications for clients, specifically for Genesys Workspace Desktop Edition (WDE). I also develop tailored solutions to meet client's unique needs and ensure their systems run smoothly.</p>
         </section>
         
         <div class="terminal" id="terminal2">
@@ -32,11 +32,11 @@
             <span class="command" data-text="more interests.txt" style="--char-count: 15;">more interests.txt</span>
         </div>
         <section class="output interests-list" id="output2">
-            <p>• Coding (I like backend development using C# (ASP.NET) or playing with C++)</p>
-            <p>• Networking and IoT (currently working on my home lab)</p>
-            <p>• Games (chess, League of Legends, or exploring new games with good communities)</p>
-            <p>• Listening to music and attending live concerts</p>
-        </section>
+            <p>👨‍💻 Backend development in C# with .NET</p>
+            <p>🤖 Passionate about the latest AI trends and applications</p>
+            <p>🎮 Video games like chess, league of legends or watching twitch streams</p>
+            <p>🌎 Traveling exploring new places, cusione and cultures</p>
+        </section>        
 
         <div class="terminal" id="terminal3">
             <span class="prompt">
@@ -75,31 +75,25 @@
         }
 
         async function animateTerminal() {
-            // Hide all elements initially
             ['terminal1', 'terminal2', 'terminal3', 'terminal4', 'output1', 'output2', 'output3'].forEach(id => {
                 document.getElementById(id).style.display = 'none';
             });
 
-            // Terminal 1 sequence
             await showElement('terminal1');
-            await new Promise(resolve => setTimeout(resolve, 1500)); // Wait for typing
+            await new Promise(resolve => setTimeout(resolve, 1500));
             await showElement('output1');
 
-            // Terminal 2 sequence
             await showElement('terminal2');
-            await new Promise(resolve => setTimeout(resolve, 1500)); // Wait for typing
+            await new Promise(resolve => setTimeout(resolve, 1500));
             await showElement('output2');
 
-            // Terminal 3 sequence
             await showElement('terminal3');
-            await new Promise(resolve => setTimeout(resolve, 1500)); // Wait for typing
+            await new Promise(resolve => setTimeout(resolve, 1500));
             await showElement('output3');
 
-            // Final terminal with cursor
             await showElement('terminal4');
         }
 
-        // Start the animation when the page loads
         document.addEventListener('DOMContentLoaded', animateTerminal);
     </script>
 </body>
