@@ -3,6 +3,8 @@
   font-family: 'Courier Prime', monospace;
   font-weight: 500;
   color: #f6f6f6;
+  font-size: 1rem;
+  line-height: 1;
 }
 
 body {
@@ -10,12 +12,30 @@ body {
   padding: 1rem;
   display: flex;
   flex-direction: column;
-  font-size: 1rem;
+  max-width: 80ch;
+  margin: 0 auto;
 }
 
 p {
   color: #f6f6f6;
   text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.links {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul.links li {
+  margin: 0;
+  padding: 0;
+}
+
+.file-list {
+  color: #dd7878;
 }
 
 a {
@@ -26,8 +46,9 @@ a {
 footer {
   color: #f6f6f6;
   margin-top: auto;
-  font-size: 10px;
+  font-size: 0.8rem;
   text-align: center;
+  opacity: 0.7;
 }
 
 .terminal-text {
@@ -46,10 +67,66 @@ footer {
   color: #f2d5cf;
 }
 
-.output {
+.terminal, .terminal2, .terminal3, .terminal4 {
+  position: relative;
   width: 100%;
   max-width: 80ch;
-  animation: fade 5s;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-top: 0.2rem;
+}
+
+.prompt {
+  display: inline-block;
+}
+
+.command {
+  position: relative;
+  display: inline-block;
+  color: transparent;
+  vertical-align: top;
+}
+
+.command::before {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #f6f6f6;
+  animation: typing 1s steps(var(--char-count)) 0.5s forwards;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+.cursor-line::after {
+  content: '|';
+  color: #f2d5cf;
+  animation: cursor-blink 1s step-end infinite;
+}
+
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.output, .output2, .output3 {
+  width: 100%;
+  max-width: 80ch;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .email:hover {
@@ -62,14 +139,6 @@ footer {
 
 .github:hover {
   color: #a6d189;
-}
-
-.terminal {
-  width: 24ch;
-  animation: typing 2s steps(30), blink .5s step-end infinite alternate;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 10px solid #f2d5cf;
 }
 
 /* animation */
@@ -87,25 +156,12 @@ footer {
   }
 }
 
-@keyframes typing {
-  0% {
-    width: 0;
-  }
-
-  100% {
-    width: 24ch;
-  }
+.interests-list {
+  padding: 0;
+  margin: 0;
 }
 
-@keyframes blink {
-  50% {
-    border-color: transparent;
-  }
-}
-
-/* dynamic resizing */
-@media (min-width:600px) {
-  body {
-    font-size: 1.25rem;
-  }
+.interests-list p {
+  padding-left: 2ch;
+  text-indent: -2ch;
 }
