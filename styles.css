@@ -74,6 +74,7 @@ footer {
   white-space: nowrap;
   overflow: hidden;
   margin-top: 0.2rem;
+  display: block;
 }
 
 .prompt {
@@ -118,10 +119,11 @@ footer {
 .output, .output2, .output3 {
   width: 100%;
   max-width: 80ch;
-  opacity: 0;
+  opacity: 1;
   animation: fadeIn 0.5s forwards;
   margin: 0;
   padding: 0;
+  display: block;
 }
 
 @keyframes fadeIn {
