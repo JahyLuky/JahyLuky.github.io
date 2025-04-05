@@ -11,13 +11,31 @@ body {
   padding: 1rem;
   display: flex;
   flex-direction: column;
+  max-width: 80ch;
+  margin: 0 auto;
 }
 
 p {
   color: #f6f6f6;
   text-decoration: none;
-  line-height: 1.5;
-  margin: 0.5rem 0;
+  line-height: 1.2;
+  margin: 0;
+}
+
+ul.links {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul.links li {
+  margin: 0;
+  padding: 0;
+}
+
+.file-list {
+  color: #dd7878;
+  padding-left: 1rem;
 }
 
 a {
@@ -30,6 +48,7 @@ footer {
   margin-top: auto;
   font-size: 0.8rem;
   text-align: center;
+  opacity: 0.7;
 }
 
 .terminal-text {
@@ -54,7 +73,7 @@ footer {
   max-width: 80ch;
   white-space: nowrap;
   overflow: hidden;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 }
 
 .prompt {
@@ -101,9 +120,8 @@ footer {
   max-width: 80ch;
   opacity: 0;
   animation: fadeIn 0.5s forwards;
-  margin-top: 0.5rem;
-  margin-bottom: 1rem;
-  line-height: 1.5;
+  margin: 0;
+  padding: 0.2rem 0;
 }
 
 @keyframes fadeIn {
@@ -136,4 +154,14 @@ footer {
   100% {
     opacity: 1;
   }
+}
+
+.interests-list {
+  padding: 0;
+  margin: 0;
+}
+
+.interests-list p {
+  padding-left: 2ch;
+  text-indent: -2ch;
 }
