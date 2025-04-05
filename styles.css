@@ -4,6 +4,7 @@
   font-weight: 500;
   color: #f6f6f6;
   font-size: 1rem;
+  line-height: 1;
 }
 
 body {
@@ -18,8 +19,8 @@ body {
 p {
   color: #f6f6f6;
   text-decoration: none;
-  line-height: 1.2;
   margin: 0;
+  padding: 0;
 }
 
 ul.links {
@@ -35,7 +36,6 @@ ul.links li {
 
 .file-list {
   color: #dd7878;
-  padding-left: 1rem;
 }
 
 a {
@@ -73,7 +73,7 @@ footer {
   max-width: 80ch;
   white-space: nowrap;
   overflow: hidden;
-  margin-top: 0.5rem;
+  margin-top: 0.2rem;
 }
 
 .prompt {
@@ -121,7 +121,7 @@ footer {
   opacity: 0;
   animation: fadeIn 0.5s forwards;
   margin: 0;
-  padding: 0.2rem 0;
+  padding: 0;
 }
 
 @keyframes fadeIn {
