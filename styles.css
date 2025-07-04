@@ -1,3 +1,20 @@
+.command-input {
+  background: transparent;
+  border: none;
+  color: #f6f6f6;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  outline: none;
+  padding-left: 1ch;
+}
+
+.command-text {
+    color: #f6f6f6;
+}
+
 * {
   background: #232635;
   font-family: 'Courier Prime', monospace;

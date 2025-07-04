@@ -51,11 +51,14 @@
             <p class="file-list">👨‍💻 <a class="github" href="https://github.com/JahyLuky" target="_blank">GitHub</a></p>
         </section>
 
-        <div class="terminal cursor-line" id="terminal4">
+        <div id="history"></div>
+
+        <div class="terminal" id="input-line">
             <span class="prompt">
                 <span class="terminal-text">jahelka@lukas</span><span class="colon">:</span><span
                     class="tilda">~/src/</span><span class="colon">$ </span>
             </span>
+            <input type="text" id="command-input" class="command-input">
         </div>
     </div>
    
@@ -64,20 +67,27 @@
     </footer>
 
     <script>
-        function showElement(elementId, delay = 0) {
+        function showElement(elementId, displayStyle = 'block', delay = 0) {
             return new Promise(resolve => {
                 setTimeout(() => {
                     const element = document.getElementById(elementId);
-                    element.style.display = 'block';
+                    if (element) {
+                        element.style.display = displayStyle;
+                    }
                     resolve();
                 }, delay);
             });
         }
 
         async function animateTerminal() {
-            ['terminal1', 'terminal2', 'terminal3', 'terminal4', 'output1', 'output2', 'output3'].forEach(id => {
-                document.getElementById(id).style.display = 'none';
+            ['terminal1', 'terminal2', 'terminal3', 'output1', 'output2', 'output3'].forEach(id => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.style.display = 'none';
+                }
             });
+            document.getElementById('input-line').style.display = 'none';
+
 
             await showElement('terminal1');
             await new Promise(resolve => setTimeout(resolve, 1500));
@@ -91,10 +101,51 @@
             await new Promise(resolve => setTimeout(resolve, 1500));
             await showElement('output3');
 
-            await showElement('terminal4');
+            await showElement('input-line', 'flex');
+            document.getElementById('command-input').focus();
         }
 
-        document.addEventListener('DOMContentLoaded', animateTerminal);
+        function handleCommand(command) {
+            const history = document.getElementById('history');
+            const [cmd, ...args] = command.trim().split(' ');
+            const argString = args.join(' ');
+
+            const commandLine = document.createElement('div');
+            commandLine.classList.add('terminal');
+            commandLine.innerHTML = `
+                <span class="prompt">
+                    <span class="terminal-text">jahelka@lukas</span><span class="colon">:</span><span
+                        class="tilda">~/src/</span><span class="colon">$ </span>
+                </span>
+                <span class="command-text">${command}</span>
+            `;
+            history.appendChild(commandLine);
+
+            if (cmd === 'echo') {
+                const outputLine = document.createElement('div');
+                outputLine.classList.add('output');
+                outputLine.innerHTML = `<p>${argString}</p>`;
+                history.appendChild(outputLine);
+            } else if (command.trim() !== '') {
+                const outputLine = document.createElement('div');
+                outputLine.classList.add('output');
+                outputLine.innerHTML = `<p>command not found: ${command}</p>`;
+                history.appendChild(outputLine);
+            }
+            window.scrollTo(0, document.body.scrollHeight);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            animateTerminal();
+            
+            const commandInput = document.getElementById('command-input');
+            commandInput.addEventListener('keydown', function(event) {
+                if (event.key === 'Enter') {
+                    handleCommand(commandInput.value);
+                    commandInput.value = '';
+                }
+            });
+        });
     </script>
 </body>
 
