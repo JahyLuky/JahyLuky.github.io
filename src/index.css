@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply bg-terminal-bg text-terminal-text;
+  }
+  
+  body {
+    @apply font-mono;
+  }
+
+  /* Focus indicators */
+  a:focus-visible,
+  button:focus-visible,
+  textarea:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 2px solid theme('colors.terminal.link');
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  /* Terminal input should have no outline */
+  input:focus-visible {
+    outline: none;
+  }
+
+  /* Remove default focus outline */
+  *:focus {
+    outline: none;
+  }
+
+  /* Only show custom outline on keyboard focus */
+  *:focus:not(:focus-visible) {
+    outline: none;
+  }
+}
+
+@layer utilities {
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+}
