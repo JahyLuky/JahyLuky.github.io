@@ -8,20 +8,19 @@ export default defineConfig({
     outDir: 'dist',
     sourcemap: false,
     minify: 'esbuild',
-    target: 'es2020',
+    target: 'es2015',
     assetsDir: 'assets',
     rollupOptions: {
       output: {
-        format: 'es',
-        manualChunks: {
-          vendor: ['react', 'react-dom', 'react-router-dom'],
-          animations: ['framer-motion'],
-        },
+        format: 'umd',
+        name: 'App',
+        manualChunks: undefined,
         entryFileNames: 'assets/[name]-[hash].js',
         chunkFileNames: 'assets/[name]-[hash].js',
-        assetFileNames: 'assets/[name]-[hash].[ext]'
+        assetFileNames: 'assets/[name]-[hash].[ext]',
+        inlineDynamicImports: true
       },
     },
-    chunkSizeWarningLimit: 600,
-  },
+    chunkSizeWarningLimit: 1000,
+  }
 });

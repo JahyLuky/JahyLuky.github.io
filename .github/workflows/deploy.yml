@@ -36,6 +36,11 @@ jobs:
     - name: Add .nojekyll to dist
       run: touch dist/.nojekyll
       
+    - name: Remove module type from script tags
+      run: |
+        sed -i 's/type="module" crossorigin/crossorigin/g' dist/index.html
+        sed -i 's/type="module"/type="text\/javascript"/g' dist/index.html
+      
     - name: Fix file permissions
       run: |
         find dist -type f -name "*.js" -exec chmod 644 {} \;
