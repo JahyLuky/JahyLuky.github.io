@@ -1,26 +1,20 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import legacy from '@vitejs/plugin-legacy';
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    legacy({
+      targets: ['defaults', 'not IE 11']
+    })
+  ],
   base: '/',
   build: {
     outDir: 'dist',
-    sourcemap: true,
-    minify: false,
-    target: 'es2015',
+    sourcemap: false,
+    minify: 'esbuild',
     assetsDir: 'assets',
-    rollupOptions: {
-      output: {
-        format: 'iife',
-        name: 'App',
-        manualChunks: undefined,
-        entryFileNames: 'assets/[name]-[hash].js',
-        chunkFileNames: 'assets/[name]-[hash].js',
-        assetFileNames: 'assets/[name]-[hash].[ext]',
-        inlineDynamicImports: true
-      },
-    },
     chunkSizeWarningLimit: 1000,
   }
 });
