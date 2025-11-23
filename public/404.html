@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lukas Jahelka</title>
+    <script>
+      // Redirect to index.html with the path as a hash for SPA routing
+      const path = window.location.pathname.slice(1);
+      if (path) {
+        window.location.replace('/#/' + path);
+      } else {
+        window.location.replace('/');
+      }
+    </script>
+  </head>
+  <body>
+    <div>Redirecting...</div>
+  </body>
+</html>
