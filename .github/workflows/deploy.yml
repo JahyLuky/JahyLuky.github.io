@@ -36,10 +36,17 @@ jobs:
     - name: Add .nojekyll to dist
       run: touch dist/.nojekyll
       
-    - name: Remove module type from script tags
+    - name: Fix HTML for GitHub Pages
       run: |
+        echo "Original HTML:"
+        cat dist/index.html
+        echo "Fixing script tags..."
+        # More comprehensive replacement
         sed -i 's/type="module" crossorigin/crossorigin/g' dist/index.html
         sed -i 's/type="module"/type="text\/javascript"/g' dist/index.html
+        sed -i 's/<script crossorigin/<script type="text\/javascript" crossorigin/g' dist/index.html
+        echo "Fixed HTML:"
+        cat dist/index.html
       
     - name: Fix file permissions
       run: |
