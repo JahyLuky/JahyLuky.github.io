@@ -8,10 +8,11 @@ export default defineConfig({
     outDir: 'dist',
     sourcemap: false,
     minify: 'esbuild',
-    target: 'es2015',
+    target: 'es2020',
     assetsDir: 'assets',
     rollupOptions: {
       output: {
+        format: 'es',
         manualChunks: {
           vendor: ['react', 'react-dom', 'react-router-dom'],
           animations: ['framer-motion'],
