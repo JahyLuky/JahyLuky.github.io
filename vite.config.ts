@@ -6,13 +6,13 @@ export default defineConfig({
   base: '/',
   build: {
     outDir: 'dist',
-    sourcemap: false,
-    minify: 'esbuild',
+    sourcemap: true,
+    minify: false,
     target: 'es2015',
     assetsDir: 'assets',
     rollupOptions: {
       output: {
-        format: 'umd',
+        format: 'iife',
         name: 'App',
         manualChunks: undefined,
         entryFileNames: 'assets/[name]-[hash].js',
