@@ -43,7 +43,7 @@ jobs:
         echo "HTML content:"
         cat dist/index.html
       
-    - name: Fix file permissions
+    - name: Fix files permissions
       run: |
         find dist -type f -name "*.js" -exec chmod 644 {} \;
         find dist -type f -name "*.css" -exec chmod 644 {} \;
