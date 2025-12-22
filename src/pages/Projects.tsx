@@ -66,6 +66,7 @@ export const Projects: React.FC = () => {
               </p>
               <p className="ml-4 text-xs opacity-60 mt-1">C++ • Game Development • AI • Minimax Algorithm</p>
             </div>
+          </div>
         </TerminalOutput>
 
       <motion.div
