@@ -66,22 +66,6 @@ export const Projects: React.FC = () => {
               </p>
               <p className="ml-4 text-xs opacity-60 mt-1">C++ • Game Development • AI • Minimax Algorithm</p>
             </div>
-
-            <div>
-              <a
-                href="https://github.com/JahyLuky/JahyLuky.github.io"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-terminal-link hover:text-terminal-link-github font-bold transition-colors"
-              >
-                Terminal Portfolio
-              </a>
-              <p className="ml-4 text-sm opacity-80 mt-1">
-                Modern portfolio website with interactive terminal aesthetic and command-line navigation
-              </p>
-              <p className="ml-4 text-xs opacity-60 mt-1">React • TypeScript • Tailwind • Framer Motion</p>
-            </div>
-          </div>
         </TerminalOutput>
 
       <motion.div
