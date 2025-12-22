@@ -54,21 +54,6 @@ export const Projects: React.FC = () => {
 
             <div>
               <a
-                href="https://github.com/JahyLuky/Genesys-connector-to-3CX"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-terminal-link hover:text-terminal-link-github font-bold transition-colors"
-              >
-                REST Connector for 3CX Chat
-              </a>
-              <p className="ml-4 text-sm opacity-80 mt-1">
-                REST API connector integrating 3CX Chat with Genesys v2 chat API for client-side chat functionalities
-              </p>
-              <p className="ml-4 text-xs opacity-60 mt-1">C# • ASP.NET Core • 3CX API • Genesys API • Swagger</p>
-            </div>
-
-            <div>
-              <a
                 href="https://github.com/JahyLuky/Chess"
                 target="_blank"
                 rel="noopener noreferrer"
