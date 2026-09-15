@@ -1,7 +1,5 @@
 # Lukas Jahelka — Personal Website
 
-Modern, terminal-themed personal website built with React + TypeScript.
-
 🌐 **Live Site**: https://JahyLuky.github.io
 
 ## Features
