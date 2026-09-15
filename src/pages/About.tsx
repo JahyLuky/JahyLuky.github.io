@@ -26,7 +26,7 @@ export const About: React.FC = () => {
         </div>
 
         <TerminalOutput delay={600}>
-          <p>Hi, I'm Lukas, a 24-year-old software developer based in Jihlava.</p>
+          <p>Hi, I'm Lukas, a 25-year-old software developer based in Jihlava.</p>
           <p className="mt-2">
             I began my career as a network engineer in the telecommunications industry and have since transitioned into software development. 
           </p>
