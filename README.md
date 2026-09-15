@@ -1,6 +1,6 @@
-# Terminal Portfolio
+# Lukas Jahelka — Personal Website
 
-Modern, terminal-themed personal portfolio built with React + TypeScript.
+Modern, terminal-themed personal website built with React + TypeScript.
 
 🌐 **Live Site**: https://JahyLuky.github.io
 
